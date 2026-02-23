@@ -187,7 +187,12 @@ a {
     color: var(--text-color);
     margin-bottom: 2rem;
     font-weight: 400;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    word-spacing: 0.35rem;
 }
+
 
 .btn {
     display: inline-block;

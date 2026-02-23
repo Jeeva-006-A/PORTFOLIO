@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const subtitle = document.querySelector('.subtitle');
         if (!subtitle) return;
 
-        const text = subtitle.innerText;
-        subtitle.innerText = '';
+        const text = subtitle.textContent || subtitle.innerText;
+        subtitle.textContent = '';
         subtitle.style.minHeight = '3em'; // Prevent layout shift
 
         let i = 0;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function type() {
             if (i < text.length) {
-                subtitle.innerText += text.charAt(i);
+                subtitle.textContent = text.slice(0, i + 1);
                 i++;
                 setTimeout(type, speed);
             }
